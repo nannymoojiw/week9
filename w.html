@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Sidebar and Main Content Container -->
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <nav class="bg-pink text-white p-3" style="width: 250px; min-height: 100vh; background-color: #ffc0cb;">
+            <h5 class="text-center">Dashboard</h5>
+            <h5 class="text-center">หนังสือรัก</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="https://youtu.be/NUBGTnl8ofE?si=OD4Ub89GKYxAHQEu" class="nav-link text-white">กดมาตรงนี้</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://youtu.be/KO_5-00gCTk?si=asf_Ai_31PteKneq" class="nav-link text-white">ส่วนตัวเท่านั้นน</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://youtu.be/OUnUp_fDZmI?si=kOYXi-4ivq4znR3f" class="nav-link text-white">ยังไม่กดอีกก</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://youtu.be/Etq0SPYelLs?si=RcfoPBP2l7aSF-io" class="nav-link text-white">งอนลิ้ววน้าา</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="flex-grow-1">
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">รักนะ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">แอบมาส่อง</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">เก๋ารักตัวเองนะคะ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Content Area -->
+            <div class="container mt-4">
+                <h1>ยินดีตอนรับเข้าสู่โลกสีชมพูง้าบบ</h1>
+                <h1>Dashboard</h1>
+                <p>This is your main dashboard content.</p>
+
+                <!-- Example Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h5 class="card-title">งอนเธอ</h5>
+                                <p class="card-text">งอนเธอมากที่สุด</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h5 class="card-title">คิดถึงเธอ</h5>
+                                <p class="card-text">คิดถึงหมูจิ้วเด้งน้อยที่สุด</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h5 class="card-title">รักหมูจิ้วเด้งที่สุดใลก</h5>
+                                <p class="card-text">สนับสนุนให้ทุกคนมีแฟนและรักแฟนมากๆค่ะเย่ๆๆๆ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <div class="card shadow p-3">
+                    <h5 class="card-title">จำนวนผู้เข้าชม (ต่อเดือน)</h5>
+                    <canvas id="myChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js Script -->
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar', // ประเภทของกราฟ: bar, line, pie, ฯลฯ
+            data: {
+                labels: ['รักเธอ', 'งอนเธอ', 'คิดถึงเธอ', 'งอนหมูเด้ง', 'รักข้าวตัง', 'รักเธอ1วัน'],
+                datasets: [{
+                    label: 'จำนวนความรักที่มีต่อข้าวตังเด้ง',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
